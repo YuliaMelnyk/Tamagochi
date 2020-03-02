@@ -103,10 +103,12 @@ public class Main {
             case 6:
                 if (tamagotchi.getClass().getName() == "Perro") {
                     System.out.println("Que buen tiempo! Nos damos a paseo!");
+                    ((Perro)tamagotchi).pasear();
                     tamagotchi.vivir();
                     System.out.println(tamagotchi.toString());
                 } else if (tamagotchi.getClass().getName() == "Pajaro") {
                     System.out.println("Vamos a volar, mi cielo!");
+                    ((Pajaro)tamagotchi).volar();
                     tamagotchi.vivir();
                     System.out.println(tamagotchi.toString());
                 } else {
