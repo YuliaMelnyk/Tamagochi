@@ -25,11 +25,11 @@ public class Main {
                 System.out.println("Tu tamagotchi se ha muerto.");
                 break;
             }
-            if (tamagotchi.getClass().getName() == "Perro") {
+            if (tamagotchi.getClass().getName().equals("Perro")) {
                 System.out.println("Menu: \n0 - Salir \n1 - No hacer nada \n2 - Dar de comer \n3 - Dormir  \n4 - Bañar \n5 - Jugar \n6 - Pasear");
                 int menu = scanner.nextInt();
                 menu(menu);
-            } else if (tamagotchi.getClass().getName() == "Pajaro") {
+            } else if (tamagotchi.getClass().getName().equals("Pajaro")) {
                 System.out.println("Menu: \n0 - Salir \n1 - No hacer nada \n2 - Dar de comer \n3 - Dormir  \n4 - Bañar \n5 - Jugar \n6 - Sacar a volar");
                 int menu = scanner.nextInt();
                 menu(menu);
@@ -101,12 +101,12 @@ public class Main {
                 System.out.println(tamagotchi.toString());
                 break;
             case 6:
-                if (tamagotchi.getClass().getName() == "Perro") {
+                if (tamagotchi.getClass().getName().equals("Perro")) {
                     System.out.println("Que buen tiempo! Nos damos a paseo!");
                     ((Perro)tamagotchi).pasear();
                     tamagotchi.vivir();
                     System.out.println(tamagotchi.toString());
-                } else if (tamagotchi.getClass().getName() == "Pajaro") {
+                } else if (tamagotchi.getClass().getName().equals("Pajaro")) {
                     System.out.println("Vamos a volar, mi cielo!");
                     ((Pajaro)tamagotchi).volar();
                     tamagotchi.vivir();
