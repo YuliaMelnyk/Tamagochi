@@ -2,14 +2,14 @@
  * @author yuliiamelnyk on 23/02/2020
  * @project Tamagochi
  */
-public abstract class Tamagochi {
+public abstract class Tamagotchi {
     String nombre;
     byte hambre;
     byte sueno;
     byte higiene;
     byte diversion;
 
-    public Tamagochi(String nombre) {
+    public Tamagotchi(String nombre) {
         this.nombre = nombre;
         this.hambre = 100;
         this.sueno = 100;
@@ -17,7 +17,7 @@ public abstract class Tamagochi {
         this.diversion = 100;
     }
 
-    public Tamagochi(String nombre, byte hambre, byte sueno, byte higiene, byte diversion) {
+    public Tamagotchi(String nombre, byte hambre, byte sueno, byte higiene, byte diversion) {
         this.nombre = nombre;
         this.hambre = hambre;
         this.sueno = sueno;
@@ -68,9 +68,39 @@ public abstract class Tamagochi {
     @Override
     public String toString() {
         return
-                "Hambre - " + hambre + "\n"+
-                "Sueno - " + sueno + "\n"+
-                "Higiene - " + higiene + "\n"+
-                "Diversion - " + diversion;
+                "Hambre - " + hambre + "\n" +
+                        "Sueno - " + sueno + "\n" +
+                        "Higiene - " + higiene + "\n" +
+                        "Diversion - " + diversion;
+    }
+
+    public void vivir() {
+        hambre -= 5;
+        sueno -= 5;
+        higiene -= 5;
+        diversion -= 5;
+    }
+
+    public boolean seHaMuerto() {
+        if (hambre == 0 || sueno == 0 || higiene == 0 || diversion == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public void comer() {
+        hambre += 15;
+    }
+
+    public void dormir() {
+        sueno += 15;
+    }
+
+    public void baniarse() {
+        higiene += 15;
+    }
+
+    public void jugar() {
+        diversion += 15;
     }
 }

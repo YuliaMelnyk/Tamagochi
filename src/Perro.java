@@ -2,7 +2,7 @@
  * @author yuliiamelnyk on 23/02/2020
  * @project Tamagochi
  */
-public class Perro extends Tamagochi {
+public class Perro extends Tamagotchi {
 
     //entre 0 y 100 cómo de satisfecha está su necesidad de pasearse
     byte paseo;
@@ -27,11 +27,28 @@ public class Perro extends Tamagochi {
 
     @Override
     public String toString() {
-        String imprimeTamagochi = getNombre()+" - Perro\n"
-                +"--------------------------\n"
-                + super.toString()+
+        String imprimeTamagochi = getNombre() + " - Perro\n"
+                + "--------------------------\n"
+                + super.toString() + "\n" +
                 "Paseo - " + paseo;
         return imprimeTamagochi;
     }
 
+    @Override
+    public void vivir() {
+        super.vivir();
+        paseo -= 5;
+    }
+
+    @Override
+    public boolean seHaMuerto() {
+        if (paseo == 0) {
+            return true;
+        }
+        return super.seHaMuerto();
+    }
+
+    public void pasear() {
+        paseo += 15;
+    }
 }
