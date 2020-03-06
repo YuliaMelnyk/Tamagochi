@@ -103,4 +103,27 @@ public abstract class Tamagotchi {
     public void jugar() {
         diversion += 15;
     }
+
+    // metodo para nacer el tamagochi, deveulve tipo de las tres posibles y nombre de tamagochi
+    public final static Tamagotchi nacer(String raza, String nombre) {
+        switch (raza.toLowerCase()) {
+            case "perro":
+                Tamagotchi perro = new Perro(nombre);
+                Main.isRaza = true;
+                return perro;
+            case "pajaro":
+                Tamagotchi pajaro = new Pajaro(nombre);
+                Main.isRaza = true;
+                return pajaro;
+            case "pez":
+                Tamagotchi pez = new Pez(nombre);
+                Main.isRaza = true;
+                return pez;
+            default:
+                System.out.println("Nececitas introducir Perro, Pajaro o Pez");
+                Main.isRaza = false;
+        }
+        return null;
+    }
+
 }

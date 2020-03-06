@@ -17,7 +17,7 @@ public class Main {
             String raza = scanner.nextLine();
             System.out.println("Introduzca nombre de tu mascota");
             String nombre = scanner.nextLine();
-            tamagotchi = nacer(raza, nombre);
+            tamagotchi = tamagotchi.nacer(raza, nombre);
             System.out.println(tamagotchi.toString());
         } while (!isRaza);
         do {
@@ -41,28 +41,6 @@ public class Main {
 
         } while (!isSalirMenu);
 
-    }
-
-    // metodo para nacer el tamagochi, deveulve tipo de las tres posibles y nombre de tamagochi
-    public static Tamagotchi nacer(String raza, String nombre) {
-        switch (raza.toLowerCase()) {
-            case "perro":
-                Tamagotchi perro = new Perro(nombre);
-                isRaza = true;
-                return perro;
-            case "pajaro":
-                Tamagotchi pajaro = new Pajaro(nombre);
-                isRaza = true;
-                return pajaro;
-            case "pez":
-                Tamagotchi pez = new Pez(nombre);
-                isRaza = true;
-                return pez;
-            default:
-                System.out.println("Nececitas introducir Perro, Pajaro o Pez");
-                isRaza = false;
-        }
-        return null;
     }
 
     // metodo para elejir el caso del menu
